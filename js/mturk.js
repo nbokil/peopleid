@@ -54,10 +54,10 @@ $(document).ready(function () {
     if (number == 7) {
       $('#mturk_form_show').html(form);
       $('#instruction_space').html('');
-      $('#instructions').html('Enter the number of people you see in each photograph below its image. You can only enter numbers, please answer carefully and thoughtfully. When you are done, click submit!');
+      $('#instructions').html('Enter the number of people you see in each photograph below its image. You can only enter numbers, please answer carefully and thoughtfully. You will receive a $1 BONUS for answering all questions correctly. When you are done, click submit!</p>');
     }
     else {
-      $('#error').html('We want to make sure you have read the instructions! Please read them again and enter the desired input');
+      $('#error').html('<p>:( Your work is very valuable to us, and we want to make sure you have read the instructions carefully! Please read them again and enter the desired input.');
     }
     
   }
