@@ -9,17 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>How Many People?</title>
+    <title>Game!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/heroic-features.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <script src="js/hit.js"></script>
+
+    <script src="js/mturk.js"></script> <!-- code provided by Jeff for form submission -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -46,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">"How many people?" Survey</a>
+                <a class="navbar-brand" href="#">"How many people?" Game</a>
             </div>
         </div>
         <!-- /.container -->
@@ -58,92 +59,34 @@
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <h1>Welcome!</h1>
-            <p>Enter the amount of people you see in each photograph below its image. Please answer carefully and thoughtfully, we appreciate your work! When you are done, click submit!</p>
+            <h2>Instructions:</h2>
+            <p id="instructions">Enter the number of people you see in each photograph below its image. You can only enter numbers, please answer carefully and thoughtfully. To show us that you have read the instructions, answer 7 for the image below. When you are done, click submit!</p>
         </header>
 
         <hr>
 
-        <!-- Images and Input -->
-        <div class="row text-center">
-            <form id="images">
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people1.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
+        <!-- Image to show that user has read instructions -->
+        <div id="instruction_space">
+            <div class="row text-center">
+                <form id="instruction_read">
+                    
+                    <div class="col-md-12 col-sm-12 hero-feature">
+                        <div class="thumbnail">
+                            <img src="images/instructions.jpg" alt="">
+                            <div class="caption">
+                                <div id="error"><p></div></p>
+                                <p>Number of People</p>
+                                    <input type="number" id="image" min="0" required>
+                            </div>
+                            <br>
+                            <button id="submit" type="button" class="btn btn-default">Submit</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people3.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people4.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people5.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people7.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people6.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/people2.jpg" alt="">
-                    <div class="caption">
-                        <p>Number of People</p>
-                            <input type="number" id="image" min="0" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group col-lg-12">
-                <input type="submit" class="btn btn-default" value="Submit">
-            </div>
-
-            </form>
         </div>
-        <!-- /.row -->
+
+        <div id="mturk_form_show"></div>
 
         <hr>
 
